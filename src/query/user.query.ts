@@ -30,9 +30,16 @@ export const getUser = async () => {
 };
 
 export const getUserProfile = async (userId: string) => {
-	return await prisma.user.findUnique({
+	return await prisma.user.findFirst({
 		where: {
-			id: userId,
+			OR: [
+				{
+					username: userId,
+				},
+				{
+					id: userId,
+				},
+			],
 		},
 		select: {
 			...userQuery,
