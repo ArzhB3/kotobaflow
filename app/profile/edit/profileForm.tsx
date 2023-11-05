@@ -58,7 +58,6 @@ export const ProfileForm = ({ onSubmit, user }: ProfileFormProps) => {
 
 				if (url) {
 					router.push(url);
-					router.refresh();
 				}
 			}}
 		>
