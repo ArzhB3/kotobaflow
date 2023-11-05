@@ -6,7 +6,7 @@ Welcome to KotobaFlow, my ongoing project that serves as a X/Threads clone, show
 
 ## User Interface Technologies
 
--   **Frontend Stack:** KotobaFlow's frontend is powered by Next.js 13, utilizing TypeScript for type-safe development. The client and server components within Next.js ensure a responsive and dynamic user interface.
+-   **Frontend Stack:** KotobaFlow's frontend is powered by Next.js 14, utilizing TypeScript for type-safe development. The client and server components within Next.js ensure a responsive and dynamic user interface.
 
 -   **Design and Styling:** For the design and styling, I've harnessed the power of Shadcn/ui and Tailwind CSS. These technologies work together seamlessly to deliver a visually appealing and user-friendly interface.
 
