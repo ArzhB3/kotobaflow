@@ -28,7 +28,7 @@ export const PostLayout = ({
 		<div
 			className={clsx('flex w-full flew-row items-start p-4', className)}
 		>
-			<Avatar>
+			<Avatar size='default'>
 				{user.image ? (
 					<AvatarImage
 						src={user.image}
