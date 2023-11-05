@@ -19,7 +19,7 @@ export const ReplyModal = ({
 
 	return (
 		<Dialog
-			open={pathname === '/reply'}
+			open={pathname?.includes('/reply')}
 			onOpenChange={() => {
 				router.back();
 			}}
