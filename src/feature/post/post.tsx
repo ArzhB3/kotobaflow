@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import { Heart, MessageCircle } from 'lucide-react';
+import { MessageCircle } from 'lucide-react';
 
 import { PostHome } from '@/src/query/post.query';
 import { PostLayout } from '@/src/feature/post/postLayout';
