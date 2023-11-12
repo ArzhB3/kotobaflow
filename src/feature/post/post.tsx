@@ -22,7 +22,9 @@ export const Post = ({ post }: postProps) => {
 				href={`/posts/${post.id}`}
 				className='text-sm text-foreground'
 			>
-				{post.content}
+				{post.content.split('\n').map((line, index) => (
+					<p key={index}>{line}</p>
+				))}
 			</Link>
 			<div className='flex items-center gap-2'>
 				<LikeButton
