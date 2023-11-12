@@ -1,12 +1,37 @@
+import { Metadata } from 'next';
+import { notFound, redirect } from 'next/navigation';
+
+import { prisma } from '@/lib/prisma';
+
+import { Button } from '@/components/ui/button';
+
+import { Post } from '@/src/feature/post/post';
+
 import { getAuthSession } from '@/lib/auth';
 import { getUserProfile } from '@/src/query/user.query';
+
 import { Profile } from './profile';
-import { notFound, redirect } from 'next/navigation';
-import { prisma } from '@/lib/prisma';
-import { Button } from '@/components/ui/button';
 import { followUser } from './follow.action';
-import { is } from 'date-fns/locale';
-import { Post } from '@/src/feature/post/post';
+
+type PageParams = {
+	params: {
+		userId: string;
+	};
+};
+
+export const generateMetadata = async ({
+	params,
+}: PageParams): Promise<Metadata> => {
+	const user = await getUserProfile(params.userId);
+
+	if (!user) {
+		throw new Error('User not found');
+	}
+
+	return {
+		title: `${user.name} (${user.username})`,
+	};
+};
 
 export default async function UserPage({
 	params,
